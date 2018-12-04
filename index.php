@@ -431,16 +431,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><a href="womens.html">Women's Wear</a></li>
                             <li><a href="electronics.html">Electronics</a></li>
                             <li><a href="codes.html">Short Codes</a></li>
-                            <li><a href="checkout.html"> <?php echo $_SESSION['pemail'];?> </a></li>
+                            <li><a href="checkout.html"> 
+                            <?php 
+                            if(isset($_SESSION['pemail'])){echo $_SESSION['pemail'];}
+                            else{echo"";}
+                            ?>
+                            </a></li>
                         </ul>
                     </div>
 
                     <div class="col-md-4 sign-gd-two">
                         <h4>Store Information</h4>
                         <ul>
-                            <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Address : 1234k Avenue, 4th block, <span>Newyork City.</span></li>
+                            <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Address : 1234k 4th block, <span> City.</span></li>
                             <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email : <a href="mailto:info@example.com">info@example.com</a></li>
-                            <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone : +1234 567 567</li>
+                            <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone : 567 567</li>
+                            <li>
+                                <form method="post" action="index.php">
+                                <input type="submit" name="logout" value="logout">
+                                </form>
+                            </li>
                         </ul>
                     </div>
 
@@ -448,7 +458,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
             </div>
             <div class="clearfix"></div>
-            <p class="copy-right">&copy 2018 Soft-Buy. All rights reserved | Design by <a href="http://soft-all.com/">soft-all</a></p>
+           </p>
         </div>
     </div>
     <!-- //footer -->

@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 $error = array();
 
 $db = mysqli_connect('localhost', 'root', '', 'furniture_management');
@@ -24,6 +23,10 @@ $db = mysqli_connect('localhost', 'root', '', 'furniture_management');
 				array_push($error, "Server not connected");
 			}
 		}
+		else{
+				array_push($error, "Password dont match!");
+				
+		}
 
 	}
 
@@ -44,6 +47,10 @@ $db = mysqli_connect('localhost', 'root', '', 'furniture_management');
 		{
 			array_push($error, "email and password not match.");
 		}
+	}
+	elseif (isset($_POST['logout'])) {
+		session_destroy();
+		header('location: index.php');
 	}
 
 ?>
