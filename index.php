@@ -1,4 +1,6 @@
 <?php include('server.php') ?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -41,6 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <body>
+    <?php include('error.php'); ?>
     <!-- header -->
     <div class="header">
         <div class="container">
@@ -428,7 +431,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><a href="womens.html">Women's Wear</a></li>
                             <li><a href="electronics.html">Electronics</a></li>
                             <li><a href="codes.html">Short Codes</a></li>
-                            <li><a href="checkout.html">My account</a></li>
+                            <li><a href="checkout.html"> <?php echo $_SESSION['pemail'];?> </a></li>
                         </ul>
                     </div>
 
@@ -492,18 +495,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                             <div class="login-right">
                                 <h3>Sign in with your account</h3>
-                                <form>
+                                <form method="post" action="index.php">
                                     <div class="sign-in">
                                         <h4>Email :</h4>
-                                        <input type="text"  required="">
+                                        <input type="text" name="email" required="">
                                     </div>
                                     <div class="sign-in">
                                         <h4>Password :</h4>
-                                        <input type="password"  required="">
+                                        <input type="password" name="pass" required="">
                                         <a href="#">Forgot password?</a>
                                     </div>
                                     <div class="sign-in">
-                                        <input type="submit" value="SIGNIN">
+                                        <input type="submit" value="SIGNIN" name="signIn">
                                     </div>
                                 </form>
                             </div>
